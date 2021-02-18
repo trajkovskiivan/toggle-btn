@@ -34,7 +34,16 @@ body {
   bottom: 14px;
   top: 8px;
   background-color: rgb(182, 182, 182);
-  transition: 0.5s
+  transition: 0.5s;
+
+}
+.slider.round:before {
+  width: 43%;
+  height: 43%;
+}
+.slider.square:before {
+  width: 43%;
+  height: 65%;
 }
 
 .switch input {
@@ -45,8 +54,12 @@ input:checked + .slider {
   background-color: black;
 }
 
-input:checked + .slider::before {
+input:checked + .slider.round::before {
   transform: translateX(47px) rotateZ(45deg);
+  background-color: yellow;
+}
+input:checked + .slider.square::before {
+  transform: translateX(47px) rotateZ(180deg);
   background-color: yellow;
 }
 
@@ -55,8 +68,6 @@ input:checked + .slider::before {
 }
 
 .slider.round:before {
-  width: 43%;
-  height: 43%;
   border-top-left-radius: 50px;
   border-top-right-radius: 50px;
   transform: rotateZ(-45deg);
